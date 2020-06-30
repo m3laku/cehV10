@@ -48,6 +48,10 @@
    - location
    - fileType
  -  Google Advanced Search and Advanced Image Search, one can search web more precisely and accurately. You can use these search features to achieve same precision as of using the advanced operators but without typing or remembering the operators
+ 
+ “site” Google search operator restricts search results to the specified site or domain. It allows you to see the URLs they have indexed of your website. Adding [-] to most operators tells Google to search for anything but that particular text.
+
+Here, the query will search for “accounting” in target.com domain but not on the Marketing.target.com domain because [-] is added before the Marketing.target.com domain in the query.
 
 - Google Hacking Database:
   - authoritative source for querying the ever-widening reach of the Google search engine. In the GHDB, you will find search terms for files containing usernames, vulnerable servers, and even files containing passwords
@@ -178,12 +182,44 @@ sublist3r [-d DOMAIN] [-b BRUTEFORCE] [-p PORTS] [-v VERBOSE][-t THREADS] [-e EN
 
 # footprinting countermeasures
 
+Configure IIS to avoid information disclosure through banner grabbing. 
+Configure web servers of the target organization  to avoid information leakage. 
+Always use TCP/IP and IPSec filters for defense in depth. 
+Hide the IP address and the related information by implementing VPN or keeping server behind a secure proxy.
+
 # footprinting penetration testing
 
 -  Footprinting pen testing helps organization to: 
    -   Prevent information leakage 
    - Prevent social engineering attempts 
    -  Prevent DNS record retrieval from publically available servers
+   
+# Notes
+
+### active vs passive
+
+Passive footprinting involves gathering information about the target without direct interaction. We can only collect the archived and stored information from about the target using publicly accessible sources such as search engines, social networking sites, job sites, groups, forums, and blogs, and so on.
+Active footprinting involves gathering information about the target with direct interaction. In active footprinting, we overtly interact with the target network.
+Passive footprinting techniques include:
+
+?        Finding information through search engines
+?        Finding the Top-level Domains (TLDs) and sub-domains of a target through web services
+?        Collecting location information on the target through web services
+?        Performing people search using social networking sites and people search services
+?        Gathering financial information about the target through financial services
+?        Gathering infrastructure details of the target organization through job sites
+?        Monitoring target using alert services
+Active footprinting involves gathering information about the target with direct interaction. In active footprinting, we overtly interact with the target network.
+Active footprinting techniques include:
+?        Querying published name servers of the target
+?        Extracting metadata of published documents and files
+?        Gathering website information using web spidering and mirroring tools
+?        Gathering information through email tracking
+?        Performing Whois lookup
+?        Extracting DNS information
+?        Performing traceroute analysis
+?        Performing social engineering
+
 
 
 
