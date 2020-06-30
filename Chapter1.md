@@ -286,6 +286,46 @@ Hidden-field manipulation
 Broken session management
 Buffer overflow issues
 
+### Attacks
+
+Dumpster Diving: Dumpster diving is the process of retrieving sensitive personal or organizational information by searching through trash bins.
+
+Phishing: Phishing is a technique in which an attacker sends an email or provides a link falsely claiming to be from a legitimate site in an attempt to acquire a user’s personal or account information. The attacker registers a fake domain name, builds a lookalike website, and then mails the fake website’s link to several users. When a user clicks on the email link, it redirects him/her to the fake webpage, where he/she is lured to share sensitive details such as address and credit card information without knowing that it is a phishing site.
+
+Piggybacking: Piggybacking usually implies entry into the building or security area with the consent of the authorized person. For example, attackers would request an authorized person to unlock a security door, saying that they have forgotten their ID badge. In the interest of common courtesy, the authorized person will allow the attacker to pass through the door.
+
+Vishing: Vishing (voice or VoIP phishing) is an impersonation technique in which attacker uses Voice over IP (VoIP) technology to trick individuals into revealing their critical financial and personal information and uses the information for his/her financial gain.
+
+### information warfare
+
+Electronic warfare: Electronic warfare uses radio electronic and cryptographic techniques to degrade communication. Radio electronic techniques attack the physical means of sending information, whereas cryptographic techniques use bits and bytes to disrupt the means of sending information.
+
+Intelligence-based warfare: Intelligence-based warfare is a sensor-based technology that directly corrupts technological systems. Intelligence-based warfare is a warfare that consists of the design, protection, and denial of systems that seek sufficient knowledge to dominate the battlespace.
+
+Command and control warfare (C2 warfare): In the computer security industry, C2 warfare refers to the impact an attacker possesses over a compromised system or network that they control.
+
+Economic warfare: Economic information warfare can affect the economy of a business or nation by blocking the flow of information. This could be especially devastating to organizations that do a lot of business in the digital world.
+
+### hardening
+
+The goal of hardening is to eliminate as many risks and threats to a computer system as necessary. Some of the hardening activities for a computer system can include the following: keeping security patches and hotfixes updated, monitoring security bulletins that apply to a system’s operating system and applications, installing a firewall, closing specific ports such as server ports, not allowing file sharing among programs, and so on.
+
+### CC
+
+Common Criteria (CC) is an international set of guidelines and specifications developed for evaluating information security products, specifically to ensure that they meet an agreed-upon security standard for government deployment.
+
+### network access control
+
+Network access control (also known as network administration control) deals with restricting the availability of a network to the end user depending on the security policy. It mainly restricts systems without antivirus, intrusion prevention software from accessing the network. NAC allows you to create policies for each user or systems and define policies for networks in terms of IP addresses.
+NAC performs the following actions:
+?        Evaluates unauthorized users, devices, or behaviors in the network. It provides access to authorized users and other entities.
+?        It helps in identifying users and devices on a network. It also determines whether these users and devices are secure or not.
+?        Examines the system integration with the network according to the security policies of the organization.
+In this environment, there are a lot of outside devices coming in and out of the company with no controls. If we implement NAC we can say who can get into the network and what policies they need to comply with.
+
+### ethical hacking
+
+Ethical hacking is necessary as it allows countering attacks from malicious hackers by anticipating methods used by them to break into a system. Ethical hacking helps to predict the various possible vulnerabilities well in advance and rectify them without inciting any attack from outsiders. As hacking involves creative thinking, vulnerability testing and security audits cannot guarantee that the network is secure. Organizations need to implement a "defense-in-depth" strategy and perform penetration testing of their networks to estimate and expose vulnerabilities.
 
 
   
