@@ -254,6 +254,38 @@ hacker vs cracker vs ethical hacker
 - Machine Learning (ML) is unsupervised self-learning system that is used to define what the normal network looks like along with its devices and then use this to backtrack and report any deviations and anomalies in real time 
 - AI and ML in cyber security helps in identifying new exploits and weaknesses which can be easily analyzed to mitigate further attacks
 
+# Notes
+
+### types of threats
+
+Network Threats: A network is the collection of computers and other hardware connected by communication channels to share resources and information. As the information travels from one system to the other through the communication channel, a malicious person might break into the communication channel and steal the information traveling over the network.
+Listed below are some of the network threats:
+
+Information gathering
+Sniffing and eavesdropping
+Spoofing
+Session hijacking
+Man-in-the-Middle attack
+Host Threats: Host threats target a particular system on which valuable information resides. Attackers try to breach the security of the information system resource.
+Listed below are some of the host threats:
+
+Malware attacks
+Footprinting
+Denial-of-Service attacks
+Arbitrary code execution
+Unauthorized access
+ Application Threats: Applications can be vulnerable if proper security measures are not taken while developing, deploying, and maintaining them. Attackers exploit the vulnerabilities present in an application to steal or destroy data.
+Listed below are some of the application threats:
+
+Improper data/input validation
+Authentication and authorization attacks
+Security misconfiguration
+Improper error handling and exception management
+Information disclosure
+Hidden-field manipulation
+Broken session management
+Buffer overflow issues
+
 
 
   
