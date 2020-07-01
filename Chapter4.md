@@ -164,6 +164,11 @@ the table of NetBIOS names, and their resolved IP addresses
 
 - PAGE 426
 
+### notes
+
+The command below will ping all IP addresses on the 192.168.2.0 network and help the tester to determine live systems in the network along with replies.
+for /L %V in (1 1 254) do PING -n 1 192.168.2.%V | FIND /I "Reply"
+
 
 
 
