@@ -280,6 +280,71 @@ It will not work against any current version of Microsoft Windows
     - Step 4: Perform banner grabbing or OS fingerprinting 
     - Step 5: Draw network diagrams
     - Step 6: Document all the findings
+    
+    # notes
+    
+ ### protocols
+ IRDP
+The ICMP Router Discovery Protocol (IRDP) is a routing protocol that allows a host to discover the IP addresses of active routers on its subnet by listening to router advertisement and solicitation messages on its network. The attacker can add default route entries on a system remotely by spoofing router advertisement messages. Since IRDP does not require any authentication, the target host will prefer the default route defined by the attacker to the default route provided by the DHCP server. The attacker accomplishes this by setting the preference level and the lifetime of the route at high values to ensure that the target hosts will choose it as the preferred route.
+ARP
+Address Resolution Protocol (ARP) is a stateless TCP/IP protocol that maps IP network addresses to the addresses (hardware addresses) used by a data link protocol. Using this protocol, a user can easily obtain the MAC address of any device on a network.
+DHCP
+Dynamic Host Configuration Protocol (DHCP) is a client/server protocol that provides an IP address to an IP host. In addition to the IP address, the DHCP server also provides configuration related information such as the default gateway and subnet mask. When a DHCP client device boots up, it participates in traffic broadcasting.
+DNS
+DNS is the protocol that translates a domain name (e.g., www.eccouncil.org) into an IP address (e.g., 208.66.172.56). The protocol uses DNS tables that contain the domain name and its equivalent IP address stored in a distributed large database.
+
+### ICMP 3/3
+
+UDP port scanners use the UDP protocol instead of the TCP. There is no three-way handshake for UDP scan. The UDP protocol can be more challenging to use than the TCP scanning because you can send a packet, but you cannot determine whether the host is alive, dead, or filtered. However, you can use one ICMP that checks for open or closed ports. 
+
+When a user sends a UDP packet to the target, either of the following can occur:
+
+If the UDP port is open, the target accepts the packet and does not send any response.
+If the UDP port is closed, the ICMP packet is sent in response.
+The user will receive an ICMP Type 3 Code 3 response if the port is closed, and no response if the port is either open | filtered.
+
+### nmap scripting engine
+
+Nmap scripting engine (NSE) provides scripts that reveal all sorts of useful information from the target web server.
+
+NSE is used in the following tasks:
+
+Network discovery
+More sophisticated version detection
+Vulnerability detection
+Backdoor detection
+Vulnerability exploitation
+
+### MBSA
+Microsoft baseline security analyzer (MBSA) allows administrators to scan local and remote systems for missing security updates as well as common security misconfigurations in Microsoft Windows products.
+
+### Tunelling scan over SSH
+SSH protocol tunneling involves sending unencrypted network traffic through an SSH tunnel. For example, suppose you want to transfer files on an unencrypted FTP protocol, but the FTP protocol is blocked on the target firewall. The unencrypted data can be sent over encrypted SSH protocol using SSH tunneling. Pen tester makes use of this technique to bypass border sensors (e.g., firewall, IDS). 
+
+### nmap timing options
+
+Some of the timing options are as follows:
+
+?        --delay <time> (Delay between probes)
+
+?        --rate <rate> (Send probes at a given rate)
+
+?        -d <time>, --delay <time> (Specify line delay)
+
+?        -i <time>, --idle-timeout <time> (Specify idle timeout)
+
+?        -w <time>, --wait <time> (Specify connect timeout)
+    
+    ### nmap
+    
+    -Pn (also known as No ping) Assume the host is up, thus skipping the host discovery phase, whereas P0 (IP Protocol Ping) sends IP packets with the specified protocol number set in their IP header.
+-A This options makes Nmap make an effort in identifying the target OS, services, and the versions. It also does traceroute and applies NSE scripts to detect additional information.
+The -O option turns on Nmap’s OS fingerprinting system. Used alongside the -v verbosity options, you can gain information about the remote operating system and about its TCP sequence number generation (useful for planning idle scans).
+-sS Perform a TCP SYN connect scan. This just means that Nmap will send a TCP SYN packet just like
+any normal application would do. If the port is open, the application must reply with SYN/ACK; however, to prevent half-open connections Nmap will send an RST to tear down the connection again.
+-sT is an Nmap TCP connect scan and it is the default TCP scan type when SYN scan is not an option.
+Since, Class C network starts its IP address from 192.0.0.0.
+
 
 
 
