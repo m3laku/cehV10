@@ -169,6 +169,22 @@ the table of NetBIOS names, and their resolved IP addresses
 The command below will ping all IP addresses on the 192.168.2.0 network and help the tester to determine live systems in the network along with replies.
 for /L %V in (1 1 254) do PING -n 1 192.168.2.%V | FIND /I "Reply"
 
+### tools used in labs
+
+Global Network inventory
+- shows users , logins, services, OS, everything
+
+Advanced ip scanner
+- can shhut down, reset, stb the target machine
+
+SuperScan
+- netbios enumeration tool
+
+Netbios enumerator
+
+SoftPerfect
+- can display the shared resources
+
 
 
 
