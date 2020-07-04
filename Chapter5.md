@@ -149,84 +149,115 @@ configuration-level check through the command line
 - SecurityMetrics MobileScan
   -  complies with PCI SSC (Payment Card Industry Security Standards Council) guidelines to prevent mobile data theft
   
-  # notes
-  
-  - Trivial File Transfer Protocol (TFTP) is a File Transfer Protocol that allows a client to get a file from or put a file onto a remote host. This protocol includes no login or access control mechanisms, and therefore it is recommended to take care when using this protocol for file transfers where authentication, access control, confidentiality, or integrity checking are needed. Otherwise, it may result in unauthorized access to remote host.
-- The Netstat WMI scan finds open ports in the Windows system. Silent dependencies limit the amount of plugin data. According to Nessus Network Auditing, edited by Russ Rogers, ‘Consider unscanned ports as closed’ will tell Nessus that all other ports not included in the port range scan to be considered as closed. This prevents ports that are targeted against ports outside that range from running.”
+ # Notes 
+
+- Trivial File Transfer Protocol (TFTP) 
+  -  a File Transfer Protocol that allows a client to get a file from or put a file onto a remote host. 
+  -  This protocol includes no login or access control mechanisms, and therefore it is recommended to take care when using this protocol for file transfers where authentication, access control, confidentiality, or integrity checking are needed. Otherwise, it may result in unauthorized access to remote host.
+- The Netstat WMI scan
+  -  finds open ports in the Windows system. 
+- Silent dependencies 
+  - limit the amount of plugin data.
+-  According to Nessus Network Auditing, edited by Russ Rogers, ‘Consider unscanned ports as closed’ will tell Nessus that all other ports not included in the port range scan to be considered as closed. This prevents ports that are targeted against ports outside that range from running.”
 
 - Buffer overflows
+    - Buffer overflows are common software vulnerabilities that happen due to coding errors allowing attackers to get access to the target system. In a buffer overflow attack, attackers undermine the functioning of programs and try to take the control of the system by writing content beyond the allocated size of the buffer. Insufficient bounds checking in the program is the root cause because of which the buffer is not able to handle data beyond its limit, causing the flow of data to adjacent memory locations and overwriting their data values. Systems often crash or become unstable or show erratic program behavior when buffer overflow occurs.
 
-Buffer overflows are common software vulnerabilities that happen due to coding errors allowing attackers to get access to the target system. In a buffer overflow attack, attackers undermine the functioning of programs and try to take the control of the system by writing content beyond the allocated size of the buffer. Insufficient bounds checking in the program is the root cause because of which the buffer is not able to handle data beyond its limit, causing the flow of data to adjacent memory locations and overwriting their data values. Systems often crash or become unstable or show erratic program behavior when buffer overflow occurs.
+- Active footprinting
+  - Active footprinting involves gathering information about the target with direct interaction. In active footprinting, information is gathered by querying published name servers, extracting metadata, web spidering, Whois lookup, etc.
 
-Active footprinting
-
-Active footprinting involves gathering information about the target with direct interaction. In active footprinting, information is gathered by querying published name servers, extracting metadata, web spidering, Whois lookup, etc.
-
-Port scanning
-
-Port scanning is the process of checking the services running on the target computer by sending a sequence of messages in an attempt to break in. Port scanning involves connecting to or probing TCP and UDP ports on the target system to determine if the services are running or are in a listening state.
-
-### assessment types
-Host-based Assessment
-
-Host-based assessments are a type of security check that involves carrying out a configuration-level check through the command line. These assessments check the security of a particular network or server. Host-based scanners assess systems to identify vulnerabilities such as incorrect registry and file permissions, as well as software configuration errors. Host-based assessment can use many commercial and open-source scanning tools.
+- Port scanning
+  - Port scanning is the process of checking the services running on the target computer by sending a sequence of messages in an attempt to break in. Port scanning involves connecting to or probing TCP and UDP ports on the target system to determine if the services are running or are in a listening state.
 
 ### assessment types
 
-Application Assessments
 
-An application assessment focuses on transactional Web applications, traditional client server applications, and hybrid systems. It analyzes all elements of an application infrastructure, including deployment and communication within the client and server. This type of assessment tests the web server infrastructure for any misconfiguration, outdated content, and known vulnerabilities. Security professionals use both commercial and open-source tools to perform such assessments.
+- Host-based assessments 
+  -  a type of security check that involves carrying out a configuration-level check through the command line. These assessments check the security of a particular network or server. Host-based scanners assess systems to identify vulnerabilities such as incorrect registry and file permissions, as well as software configuration errors. Host-based assessment can use many commercial and open-source scanning tools.
 
-Passive Assessment
 
-Passive assessments sniff the traffic present on the network to identify the active systems, network services, applications, and vulnerabilities. Passive assessments also provide a list of the users who are currently using the network.
+- application assessment 
+  - focuses on transactional Web applications, traditional client server applications, and hybrid systems. It analyzes all elements of an application infrastructure, including deployment and communication within the client and server. This type of assessment tests the web server infrastructure for any misconfiguration, outdated content, and known vulnerabilities. Security professionals use both commercial and open-source tools to perform such assessments.
 
-Active Assessment
+- Passive Assessment
+  - Passive assessments sniff the traffic present on the network to identify the active systems, network services, applications, and vulnerabilities. Passive assessments also provide a list of the users who are currently using the network.
 
-Active assessments are a type of vulnerability assessment that uses network scanners to scan the network to identify the hosts, services, and vulnerabilities present in that network. Active network scanners have the capability to reduce the intrusiveness of the checks they perform.
+- Active Assessment
+  - Active assessments are a type of vulnerability assessment that uses network scanners to scan the network to identify the hosts, services, and vulnerabilities present in that network. Active network scanners have the capability to reduce the intrusiveness of the checks they perform.
 
-Wireless Network Assessments
-
-Wireless network assessment determines the vulnerabilities in an organization’s wireless networks. Wireless network assessments try to attack wireless authentication mechanisms and get unauthorized access. This type of assessment tests wireless networks and identifies rogue wireless networks that may exist within an organization’s perimeter. These assessments audit client-specified sites with a wireless network.
+- Wireless Network Assessments
+  - Wireless network assessment determines the vulnerabilities in an organization’s wireless networks. Wireless network assessments try to attack wireless authentication mechanisms and get unauthorized access. This type of assessment tests wireless networks and identifies rogue wireless networks that may exist within an organization’s perimeter. These assessments audit client-specified sites with a wireless network.
 
 ### vulnerability management phases
 
-The phases involved in vulnerability management are:
+- Creating Baseline
+    - In this phase, critical assets are identified and prioritized to create a good baseline for the vulnerability management.
 
-?        Creating Baseline
+- Vulnerability Assessment
+  - This is a very crucial phase in vulnerability management. In this step, the security analyst identifies the known vulnerabilities in the organization infrastructure.
 
-In this phase, critical assets are identified and prioritized to create a good baseline for the vulnerability management.
+- Risk Assessment
+  - In this phase, all the serious uncertainties that are associated with the system are assessed, fixed, and permanently eliminated for ensuring a flaw free system.
 
-?        Vulnerability Assessment
+- Remediation
+  - Remediation is the process of reducing the severity of vulnerabilities. This phase is initiated after the successful implementation of the baseline and assessment steps.
 
-This is a very crucial phase in vulnerability management. In this step, the security analyst identifies the known vulnerabilities in the organization infrastructure.
+- Verification
+  - This phase provides a clear visibility into the firm and allows the security team to check whether all the previous phases are perfectly employed or not.
 
-?        Risk Assessment
+- Monitor
+  - Regular monitoring needs to be performed for maintaining the system security using tools such as IDS/IPS, firewalls, etc.
 
-In this phase, all the serious uncertainties that are associated with the system are assessed, fixed, and permanently eliminated for ensuring a flaw free system.
+### Assessment Tools
+- Depth Assessment Tools
+  - Depth assessment tools are used to find and identify previously unknown vulnerabilities in a system. Generally, these tools are used to identify vulnerabilities to an unstable degree of depth. Such types of tools include fuzzers that give arbitrary input to a system’s interface. Many of these tools use a set of vulnerability signatures for testing that the product is resistant to a known vulnerability or not.
 
-?        Remediation
+- Scope Assessment Tools
+  - Scope assessment tools provides assessment of the security by testing vulnerabilities in the applications and operating system. These tools provide a standard control and a reporting interface that allows the user to select a suitable scan.
 
-Remediation is the process of reducing the severity of vulnerabilities. This phase is initiated after the successful implementation of the baseline and assessment steps.
+- Application-Layer Vulnerability Assessment Tools
+  - Application-layer vulnerability assessment tools are designed to serve the needs of all kinds of operating system types and applications.
 
-?        Verification
+- Active Scanning Tools
+  - Active scanners perform vulnerability checks on the network that consume resources on the network.
 
-This phase provides a clear visibility into the firm and allows the security team to check whether all the previous phases are perfectly employed or not.
+### metrics
+- CVSS assessment consists of three metrics for measuring vulnerabilities:
+    - Base metrics: 
+      - It represents the inherent qualities of a vulnerability. 
+    - Temporal metrics: 
+      - It represents the features that keep on changing during the lifetime of a vulnerability.
+    - environmental metrics: 
+      - It represents the vulnerabilities that are based on a particular environment or implementation.
 
-?        Monitor
+### tools
+- Nessus Professional 
+    - is an assessment solution for identifying vulnerabilities, configuration issues, and malware that attackers use to penetrate networks. It performs vulnerability, configuration, and compliance assessment. It supports various technologies such as operating systems, network devices, hypervisors, databases, tablets/phones, web servers, and critical infrastructure. Nessus is the vulnerability scanning platform for auditors and security analysts. Users can schedule scans across multiple scanners, use wizards to easily and quickly create policies, schedule scans, and send results via email.
 
-Regular monitoring needs to be performed for maintaining the system security using tools such as IDS/IPS, firewalls, etc.
+- Recon-ng and FOCA 
+  - are footprinting tools used to collect basic information about the target systems in order to exploit them.
 
-External Assessment
+- Wireshark 
+  - is a traffic capturing tool that lets you capture and interactively browse the traffic running on a computer network. It captures live network traffic from Ethernet, IEEE 802.11, PPP/HDLC, ATM, Bluetooth, USB, Token Ring, Frame Relay, FDDI networks.
 
-External assessment assesses the network from a hacker's point of view to find out what exploits and vulnerabilities are accessible to the outside world. These types of assessments use external devices such as firewalls, routers, and servers.
+### vulnerability assessment report
 
-Network based Assessments
+- A vulnerability assessment report will provide detailed information on the vulnerabilities that are found in the computing environment. The report will help organizations to identify the security posture found in the computing systems (such as web servers, firewalls, routers, email, and file services) and provide solutions to reduce failures in the computing system.
 
-Network assessments determine the possible network security attacks that may occur on an organization’s system. These assessments evaluate the organization’s system for vulnerabilities such as missing patches, unnecessary services, weak authentication, and weak encryption.
+- Vulnerability reports cover the following elements:
 
-Internal Assessment
+  -   Scan information: 
+      -   This part of the report provides information such as the name of the scanning tool, its version, and the network ports that have to be scanned.
 
-An internal assessment involves scrutinizing the internal network to find exploits and vulnerabilities.
-
-
+  - Target information: 
+    - This part of the report contains information about the target system’s name and address.
+  - Results: 
+    - This section provides a complete scanning report. It contains subtopics such as target, services, vulnerability, classification, and assessment
+  - Target:
+    -  This subtopic includes each host’s detailed information.
+  -  Services: 
+     -   The subtopic defines the network services by their names and ports
+   - Classification: 
+     - This subtopic allows the system administrator to obtain additional information about the scanning such as origin of the scan.
+   - Assessment:
+     -  This class provides information regarding the scanner’s assessment of the vulnerability.
