@@ -352,6 +352,126 @@
         - Attacker uses ICMP tunneling technique to use ICMP echo and ICMP reply packets as a carrier of TCP payload, to access or control a system stealthily
     - Using DNS Tunneling
     - Using TCP Parameters
+    
+    # Notes
+
+### SAM database
+
+- Windows uses the security accounts manager (SAM) database or active directory database to manage user accounts and passwords in the hashed format (one-way hash). The system does not store the passwords in plaintext format, but in hashed format, to protect them from attacks. The system implements SAM database as a registry file, and the Windows kernel obtains and keeps an exclusive file system lock on the SAM file. As this file consists of a file system lock, this provides some measure of security for the storage of passwords.
+
+### usb attack tools
+
+- USB Dumper 
+  - copies the files and folders from the flash drive silently when it connected to the pc. It transfer the data from a removable USB drive to a directory named 'USB' by default, with an option to change it.
+- USB Grabber 
+  - allows users to connect any analogue audio/video source to the system through a USB port. 
+- USB Sniffer
+  -  monitors the activity of USB ports on the system. 
+- USB Snoopy 
+  - is a sort of viewer of the USB traffic.
+ 
+### rainbow table
+
+- A rainbow table attack uses the cryptanalytic time-memory trade-off technique, which requires less time than some other techniques. It uses already-calculated information stored in memory to crack the cryptography. In the rainbow table attack, the attacker creates a table of all the possible passwords and their respective hash values, known as a rainbow table, in advance.
+
+- Windows passwords are stored as a hash on disk using the NTLM algorithm. Older versions of Windows (prior to Windows Server 2008) also store passwords using the LM hashing algorithm. LM hashing was deprecated due its weak security design, which is vulnerable to rainbow table attacks within a greatly reduced period of time.
+
+- In the above scenario, the company is using Windows Server 2003 for its active directory, which is vulnerable to rainbow attack.
+
+### access controls
+
+- Mandatory Access Control (MAC): 
+  - The mandatory access controls determine the usage and access policies of the users. Users can access a resource only if that particular user has the access rights to that resource. MAC finds its application in the data marked as highly confidential. The network administrators impose MAC, depending on the operating system and security kernel. It does not permit the end user to decide who can access the information, and does not permit the user to pass privileges to other users as the access could then be circumvented.
+
+- Discretionary Access Control (DAC): 
+  - Discretionary access controls determine the access controls taken by any possessor of an object in order to decide the access controls of the subjects on those objects. The other name for DAC is a need-to-know access model. It permits the user, who is granted access to information, to decide how to protect the information and the level of sharing desired. Access to files is restricted to users and groups based upon their identity and the groups to which the users belong.
+
+- Role Based Access Control (RBAC): 
+  - In role based access control, the access permissions are available based on the access policies determined by the system. The access permissions are out of user control, which means that users cannot amend the access policies created by the system. Users can be assigned access to systems, files, and fields on a one-to-one basis whereby access is granted to the user for a particular file or system. It can simplify the assignment of privileges and ensure that individuals have all the privileges necessary to perform their duties.
+
+- Rule-Based Access Control (RuBAC): In rule based access control, the end point devices such as firewalls verifies the request made to access the network resources against a set of rules. These rules generally include IP addresses, port numbers, etc. 
+
+### vulnerabilities
+- Meltdown vulnerability:
+  -  This is found in all the Intel processors and ARM processors deployed by Apple. This vulnerability leads to tricking a process to access out-of-bounds memory by exploiting CPU optimization mechanisms such as speculative execution. 
+
+- Dylib hijacking: 
+  - This allows an attacker to inject a malicious dylib in one of the primary directories and simply load the malicious dylib at runtime.
+
+- Spectre vulnerability:
+  -  Spectre vulnerability is found in many modern processors such as AMD, ARM, Intel, Samsung, and Qualcomm processors. This vulnerability leads to tricking a processor to exploit speculative execution to read restricted data. The modern processors implement speculative execution to predict the future and to complete the execution faster. 
+
+- DLL hijacking: 
+  - In DLL hijacking attackers place a malicious DLL in the application directory; the application will execute the malicious DLL in place of the real DLL.
+
+### attacks
+
+- Scheduled task: 
+  - The Windows operating system includes utilities such as “at” and “schtasks.” A user with administrator privileges can use these utilities in conjunction with the task scheduler to schedule programs or scripts that can be executed at a particular date and time. If a user provides proper authentication, he can also schedule a task from a remote system using RPC. An attacker can use this technique to execute malicious programs at system startup, maintain persistence, perform remote execution, escalate privileges, etc.
+
+- Web shell:
+  -  A web shell is a web-based script that allows access to a web server. Web shells can be created in all the operating systems like Windows, Linux, MacOS, and OS X. Attackers create web shells to inject malicious script on a web server to maintain persistent access and escalate privileges. Attackers use a web shell as a backdoor to gain access and control a remote server. Generally, a web shell runs under current user’s privileges. Using a web shell an attacker can perform privilege escalation by exploiting local system vulnerabilities. After escalating the privileges, an attacker can install malicious software, change user permissions, add or remove users, steal credentials, read emails, etc.
+
+- Launch daemon: 
+  - At the time of MacOS and OS X booting process, launchd is executed to complete the system initialization process. Parameters for each launch-on-demand system-level daemon found in /System/Library/LaunchDaemonsand/Library/LaunchDaemons are loaded using launchd. These daemons have property list files (plist) that are linked to executables that run at the time of booting. Attackers can create and install a new launch daemon, which can be configured to execute at boot-up time using launchd or launchctl to load plist into concerned directories. The weak configurations allow an attacker to alter the existing launch daemon’s executable to maintain persistence or to escalate privileges.
+
+- Access token manipulation:
+  -  In Windows operating system, access tokens are used to determine the security context of a process or thread. These tokens include the access profile (identity and privileges) of a user associated with a process. After a user is authenticated, the system produces an access token. Every process the user executes makes use of this access token. The system verifies this access token when a process is accessing a secured object.
+- Path interception
+  -  a method of placing an executable in a particular path in such a way that it will be executed by the application in place of the legitimate target. Attackers can take advantage of several flaws or misconfigurations to perform path interception like unquoted paths (service paths and shortcut paths), path environment variable misconfiguration, and search order hijacking. Path interception helps an attacker to maintain persistence on a system and escalate privileges.
+
+### audit pool
+
+- Auditpol.exe is the command-line utility tool to change Audit Security settings at the category and sub-category levels. Attackers can use AuditPol to enable or disable security auditing on local or remote systems and to adjust the audit criteria for different categories of security events.
+- The attacker would establish a null session to the target machine and run the command:
+  - C:\>auditpol \<ip address of target>
+  - This will reveal the current audit status of the system. 
+- He or she can choose to disable the auditing by:
+  - C :\>auditpol \<ip address of target> /disable
+  - This will make changes in the various logs that might register the attacker’s actions. He/she can choose to hide the registry keys changed later on.
+- Run clearlogs.exe from the command prompt, for clearing application log   
+  - C:\clearlogs.exe -app
+
+### bash
+- history –c: 
+  - This command is useful in clearing the stored history.
+
+- export HISTSIZE=0: 
+  - This command disables the BASH shell from saving the history by setting the size of the history file to 0. 
+
+- history–w: 
+  - This command only deletes the history of the current shell, whereas the command history of other shells remain unaffected.
+
+- shred ~/.bash_history:
+  -  This command shreds the history file, making its contents unreadable.
+  
+### random stuff
+
+- OS X provides several legitimate methods, such as setting the DYLD_INSERT_LIBRARIES environment variable, which are user specific. These methods force the loader to load malicious libraries automatically into a target running process. OS X allows the loading of weak dylibs (dynamic library) dynamically, which allows an attacker to place a malicious dylib in the specified location.
+- Rootkit
+  -  Rootkits are software programs aimed to gain access to a computer without detection. These are malware that help the attackers to gain unauthorized access to a remote system and perform malicious activities. The goal of the rootkit is to gain root privileges to a system. By logging in as the root user of a system, an attacker can perform any task such as installing software or deleting files, and so on.
+- TCP Parameters: 
+  - TCP parameters can be used by the attacker to distribute the payload and to create covert channels. Some of the TCP fields where data can be hidden are as follow:
+
+  - IP Identification field: This is an easy approach where a payload is transferred bitwise over an established session between two systems. Here, one character is encapsulated per packet.
+  - TCP acknowledgement number: This approach is quite difficult as it uses a bounce server that receives packets from the victim and sends it to an attacker. Here, one hidden character is relayed by the bounce server per packet.
+  - TCP initial sequence number: This method also does not require an established connection between two systems. Here, one hidden character is encapsulated per SYN request and Reset packets.
+
+### manioulating log files
+
+- Auditpol.exe: 
+  - Auditpol.exe is the command line utility tool to change Audit Security settings at the category and sub-category levels. Attackers can use AuditPol to enable or disable security auditing on local or remote systems and to adjust the audit criteria for different categories of security events.
+
+- Clear_Event_Viewer_Logs.bat/clearlogs.exe: 
+  - The Clear_Event_Viewer_Logs.bat or clearlogs.exe is a utility that can be used to wipe out the logs of the target system. This utility can be run through command prompt, PowerShell, and using a BAT file to delete security, system, and application logs on the target system. Attackers might use this utility, wiping out the logs as one method of covering their tracks on the target system.
+
+- SECEVENT.EVT: 
+  - ttackers may not wish to delete an entire log to cover their tracks, as doing so may require admin privileges. If attackers are able to delete only attack event logs, they will still be able to escape detection.
+
+  - The attacker can manipulate the log files with the help of: 
+    - SECEVENT.EVT (security): failed logins, accessing files without privileges
+    - SYSEVENT.EVT (system): Driver failure, things not operating correctly
+    - APPEVENT.EVT (applications)
 
 
 
