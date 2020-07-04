@@ -148,3 +148,85 @@ configuration-level check through the command line
   -  MBSA lets administrators scan local and remote systems for missing security updates as well as common security misconfigurations
 - SecurityMetrics MobileScan
   -  complies with PCI SSC (Payment Card Industry Security Standards Council) guidelines to prevent mobile data theft
+  
+  # notes
+  
+  - Trivial File Transfer Protocol (TFTP) is a File Transfer Protocol that allows a client to get a file from or put a file onto a remote host. This protocol includes no login or access control mechanisms, and therefore it is recommended to take care when using this protocol for file transfers where authentication, access control, confidentiality, or integrity checking are needed. Otherwise, it may result in unauthorized access to remote host.
+- The Netstat WMI scan finds open ports in the Windows system. Silent dependencies limit the amount of plugin data. According to Nessus Network Auditing, edited by Russ Rogers, ‘Consider unscanned ports as closed’ will tell Nessus that all other ports not included in the port range scan to be considered as closed. This prevents ports that are targeted against ports outside that range from running.”
+
+- Buffer overflows
+
+Buffer overflows are common software vulnerabilities that happen due to coding errors allowing attackers to get access to the target system. In a buffer overflow attack, attackers undermine the functioning of programs and try to take the control of the system by writing content beyond the allocated size of the buffer. Insufficient bounds checking in the program is the root cause because of which the buffer is not able to handle data beyond its limit, causing the flow of data to adjacent memory locations and overwriting their data values. Systems often crash or become unstable or show erratic program behavior when buffer overflow occurs.
+
+Active footprinting
+
+Active footprinting involves gathering information about the target with direct interaction. In active footprinting, information is gathered by querying published name servers, extracting metadata, web spidering, Whois lookup, etc.
+
+Port scanning
+
+Port scanning is the process of checking the services running on the target computer by sending a sequence of messages in an attempt to break in. Port scanning involves connecting to or probing TCP and UDP ports on the target system to determine if the services are running or are in a listening state.
+
+### assessment types
+Host-based Assessment
+
+Host-based assessments are a type of security check that involves carrying out a configuration-level check through the command line. These assessments check the security of a particular network or server. Host-based scanners assess systems to identify vulnerabilities such as incorrect registry and file permissions, as well as software configuration errors. Host-based assessment can use many commercial and open-source scanning tools.
+
+### assessment types
+
+Application Assessments
+
+An application assessment focuses on transactional Web applications, traditional client server applications, and hybrid systems. It analyzes all elements of an application infrastructure, including deployment and communication within the client and server. This type of assessment tests the web server infrastructure for any misconfiguration, outdated content, and known vulnerabilities. Security professionals use both commercial and open-source tools to perform such assessments.
+
+Passive Assessment
+
+Passive assessments sniff the traffic present on the network to identify the active systems, network services, applications, and vulnerabilities. Passive assessments also provide a list of the users who are currently using the network.
+
+Active Assessment
+
+Active assessments are a type of vulnerability assessment that uses network scanners to scan the network to identify the hosts, services, and vulnerabilities present in that network. Active network scanners have the capability to reduce the intrusiveness of the checks they perform.
+
+Wireless Network Assessments
+
+Wireless network assessment determines the vulnerabilities in an organization’s wireless networks. Wireless network assessments try to attack wireless authentication mechanisms and get unauthorized access. This type of assessment tests wireless networks and identifies rogue wireless networks that may exist within an organization’s perimeter. These assessments audit client-specified sites with a wireless network.
+
+### vulnerability management phases
+
+The phases involved in vulnerability management are:
+
+?        Creating Baseline
+
+In this phase, critical assets are identified and prioritized to create a good baseline for the vulnerability management.
+
+?        Vulnerability Assessment
+
+This is a very crucial phase in vulnerability management. In this step, the security analyst identifies the known vulnerabilities in the organization infrastructure.
+
+?        Risk Assessment
+
+In this phase, all the serious uncertainties that are associated with the system are assessed, fixed, and permanently eliminated for ensuring a flaw free system.
+
+?        Remediation
+
+Remediation is the process of reducing the severity of vulnerabilities. This phase is initiated after the successful implementation of the baseline and assessment steps.
+
+?        Verification
+
+This phase provides a clear visibility into the firm and allows the security team to check whether all the previous phases are perfectly employed or not.
+
+?        Monitor
+
+Regular monitoring needs to be performed for maintaining the system security using tools such as IDS/IPS, firewalls, etc.
+
+External Assessment
+
+External assessment assesses the network from a hacker's point of view to find out what exploits and vulnerabilities are accessible to the outside world. These types of assessments use external devices such as firewalls, routers, and servers.
+
+Network based Assessments
+
+Network assessments determine the possible network security attacks that may occur on an organization’s system. These assessments evaluate the organization’s system for vulnerabilities such as missing patches, unnecessary services, weak authentication, and weak encryption.
+
+Internal Assessment
+
+An internal assessment involves scrutinizing the internal network to find exploits and vulnerabilities.
+
+
