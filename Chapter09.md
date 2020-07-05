@@ -121,6 +121,22 @@
     - Social engineering campaign 
     - Gap analysis 
     - Remediation strategies
+    
+    # notes
+    
+    ### identity theeft
+
+- Tax Identity Theft:
+  -  This type of identity theft occurs when perpetrator steals the victim’s Social Security Number or SSN in order to file fraudulent tax returns and obtain fraudulent tax refunds. It creates difficulties for the victim in accessing the legitimate tax refunds and results in a loss of funds.
+
+- Identity cloning and concealment:
+  -  This is a type of identity theft which encompasses all forms of identity theft where the perpetrators attempt to impersonate someone else in order to simply hide their identity. These perpetrators could be illegal immigrants or those hiding from creditors or simply want to become “anonymous” due to some other reasons.
+
+- Synthetic identity theft:
+  -  This is one of the most sophisticated types of identity theft where the perpetrator obtains information from different victims to create a new identity. Firstly, he steals a Social Security Number or SSN and uses it with a combination of fake names, date of birth, address and other details required for creating new identity. The perpetrator uses this new identity to open new accounts, loans, credit cards, phones, other goods and services.
+
+- Social identity theft: 
+  - This is another most common type of identity theft where the perpetrator steals victim’s Social Security Number or SSN in order to derive various benefits such as selling it to some undocumented person, use it to defraud the government by getting a new bank account, loans, credit cards or for passport.
 
   
 
