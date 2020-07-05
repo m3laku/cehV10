@@ -311,6 +311,90 @@
         - user32.dll
 # Countermeasures
 
+# Notes
+
+### rootkits
+
+- GrayFish Rootkit:
+  -  GrayFish is a Windows kernel rootkit that runs inside the Windows operating system and provides an effective mechanism, hidden storage and malicious command execution while remaining invisible. It injects its malicious code into the boot record which handles the launching of Windows at each step. It implements its own Virtual File System (VFS) to store the stolen data and its own auxiliary information.
+
+- Hardware/Firmware Rootkit:
+  -  Hardware/firmware rootkits use devices or platform firmware to create a persistent malware image in hardware, such as a hard drive, system BIOS, or network card. The rootkit hides in firmware as the users do not inspect it for code integrity. A firmware rootkit implies the use of creating a permanent delusion of rootkit malware.
+
+- Boot Loader Level Rootkit:
+  -  Boot loader level (bootkit) rootkits function either by replacing or modifying the legitimate bootloader with another one.  The boot loader level (bootkit) can activate even before the operating system starts. So, the boot-loader-level (bootkit) rootkits are serious threats to security because they can help in hacking encryption keys and passwords.
+
+- EquationDrug Rootkit: 
+  - EquationDrug is a dangerous computer rootkit that attacks the Windows platform. It performs targeted attacks against various organizations and arrives on the infected system by being downloaded and executed by the Trickler dubbed "DoubleFantasy", covered by TSL20110614-01 (Trojan.Win32.Micstus.A). It allows a remote attacker to execute shell commands on the infected system.
+
+### promoting malware
+
+- Drive-by Downloads:
+  -  The unintentional downloading of software via the Internet. Here, an attacker exploits flaws in browser software to install malware just merely by visiting a website.
+
+- Blackhat Search Engine Optimization (SEO):
+  -  Blackhat SEO (also referred to as unethical SEO) uses aggressive SEO tactics such as keyword stuffing, doorway pages, page swapping, and adding unrelated keywords to get higher search engine ranking for their malware pages.
+
+- Malvertising:
+  -  Involves embedding malware-laden advertisements in legitimate online advertising channels to spread malware onto the systems of unsuspecting users.
+
+- Spear Phishing: 
+  - Instead of sending thousands of emails, some attackers opt for “spear phishing” and use specialized social engineering content directed at a specific employee or small group of employees in a particular organization to steal sensitive data such as financial information and trade secrets. Spear phishing messages seems to be from a trusted source with an official-looking website. The email also appears to be from an individual from the recipient's company, generally someone in position of authority. But the message is actually sent by an attacker attempting to obtain critical information about a specific recipient and his/her organization, such as login credentials, credit card details, bank account numbers, passwords, confidential documents, financial information, and trade secrets. 
+
+### random stuff
+
+- Mirai 
+  -  a self-propagating botnet that infects poorly protected internet devices (IoT devices). Mirai uses Telnet Port (23 or 2323) to find those devices that are still using their factory default username and password. Most of the IoT devices use default usernames and passwords and Mirai botnet has the ability to infect such multiple insecure devices and co-ordinate them to mount a DDoS attack against a chosen victim.
+- BitCripter
+  - BitCrypter to encrypt and compress 32-bit executables and .NET apps, without affecting their direct functionality. A Trojan or malicious software piece can be encrypted onto a legitimate software to bypass firewalls and antivirus software. BitCrypter supports a wide range of OSs from Windows XP to the latest Windows 10. 
+  
+- ClamWin: 
+  - ClamWin is a Free Antivirus program for Microsoft Windows 10 / 8 / 7 / Vista / XP / Me / 2000 / 98 and Windows Server 2012, 2008 and 2003.
+- WannaCry:
+  -  WannaCry is ransomware that on execution encrypts the files and locks the user's system thereby leaving the system in an unusable state. The compromised user has to pay ransom in bitcoins to the attacker to unlock the system and get the files decrypted.
+- DriverView:
+  -  DriverView utility displays the list of all device drivers currently loaded on the system. For each driver in the list, additional information is displayed such as load address of the driver, description, version, product name, company that created the driver, etc.
+
+- Polymorphic virus: 
+  - Decrypting engine decrypts the virus code before execution. During each infection, the mutation engine builds a new code of virus with a complete different functionality. Then, the actual code and mutation engine both are encrypted for the next infection.
+
+- Metamorphic virus:
+  -  The virus rewrites itself at each time of infection. Original algorithm and functionality remains intact but a variant of the same virus is created.
+
+- NotPetya 
+  - infects the master boot record to execute a payload that encrypts a hard drive’s file system table and stops Windows from booting. 
+  - It can spread over the network using WMIC (Windows Management Instrumentation Command-line) by capturing all credentials from the local machine using Mimikatz.
+  - This ransomware follows the footsteps of Wannacry that encrypts computer files and demands a ransom of $300 Bitcoins to decrypt the data. This attack had been initiated against an update, used on a third party Ukrainian software called MeDoc, which is used by many government organizations.
+
+- Mischa: 
+  - The Mischa Ransomware is the standard garden variety ransomware that encrypts your files and then demands a ransom payment to get the decryption key.
+
+- Locky: 
+  - Locky is a dreadful data encrypting parasite that not only infects the computer system but also has the ability to corrupt data on unmapped network shares. This ransomware spreads as a malicious Word document named invoice J-[8 random numbers].doc that is attached to spam emails.
+
+- DELmE’s Batch Virus Generator: 
+  - DELmE’s Batch Virus Generator is a virus creation program with lots of options to infect the victim’s PC such as formatting C: drive, deleting all files in Hard Disk drive, disabling admin privileges, cleaning registry, changing the home page, killing tasks, disabling/removing antivirus and firewall, etc.
+
+- JPS Virus Maker: 
+  - JPS Virus Maker tool is used to create the own customized virus. There are many options in build in this tool which can be used to create the virus. Some of the features of this tool are auto start, shutdown, disable security center, lock mouse and keyboard, destroy protected storage, and terminate windows.
+
+- VirusTotal: 
+  - VirusTotal is a free service that analyzes suspicious files and URLs and facilitates the detection of viruses, worms, Trojans, etc. It generates a report that provides the total number of engines that marked the file as malicious, the malware name, and if available, additional information about the malware.
+
+- BinText
+  -  a small text extractor utility that can extract text from any kind of file and includes the ability to find plain ASCII text, Unicode (double byte ANSI) text and Resource strings, providing useful information for each item in the optional "advanced" view mode.
+
+- UPX (Ultimate Packer for Executables) 
+  -  a free and open source executable packer supporting a number of file formats from different operating systems. 
+
+- ASPack 
+  -  an advanced EXE packer created to compress Win32 executable files and to protect them against non-professional reverse engineering. 
+
+- PE Explorer 
+  - lets you open, view and edit a variety of different 32-bit Windows executable file types (also called PE files) ranging from the common, such as EXE, DLL and ActiveX Controls, to the less familiar types, such as SCR (Screensavers), CPL (Control Panel Applets), SYS, MSSTYLES, BPL, DPL and more (including executable files that run on MS Windows Mobile platform).
+- Windows services monitoring 
+  - traces malicious services initiated by the malware. Since malware employs rootkit techniques to manipulate HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services registry keys to hide its processes, windows service monitoring can be used to identify such manipulations.
+
 
 
 
