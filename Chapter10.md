@@ -174,6 +174,35 @@ happens by the contracted ISP. ISPs offer “clean pipes” service-level agreem
 
 ### Enabling TCP Intercept on Cisco IOS Software
 - PAGE 1093
+
+# Notes
+
+### peer to peer attack
+
+- uses DC++
+- Peer-to-peer attack is a form of DDoS attack. In this kind of attack, the attacker exploits a number of bugs in peer-to-peer servers to initiate a DDoS attack. Unlike a botnet-based attack, a peer-to-peer attack eliminates the need for attackers to communicate with the clients it subverts. Here, the attacker instructs clients of large peer-to peer file-sharing hubs to disconnect from their peer-to-peer network and instead, to connect to the victim’s website. With this, several thousand computers may aggressively try to connect to a target website, which decreases the performance of the target website.
+
+
+### countermeasures
+
+- Ingress filtering
+  -  protects against flooding attacks that originate from valid prefixes (IP addresses). 
+- Egress filtering
+  -  scans the headers of IP packets going out of the network.
+
+- TCP intercept mode
+   - the router intercepts the SYN packets sent by the clients to the server and matches with an extended access list. If there is a match, then on behalf of the destination server, the intercept software establishes a connection with the client. Similarly, the intercept software also establishes a connection with the destination server on behalf of the client. Once the two half connections are established, the intercept software combines them transparently.
+   - Thus, the TCP intercept software prevents the attempts of fake connection from reaching the server. It acts as a mediator between the server and the client throughout the connection.
+
+- MAC address filtering 
+  - allows you to define a list of devices and only allows those devices on your network.
+
+### random stuff
+
+- Smurf attack
+  -  the attacker spoofs the source IP address with the victim’s IP address and sends large number of ICMP ECHO request packets to an IP broadcast network. This causes all the hosts on the broadcast network to respond to the received ICMP ECHO requests. These responses will be sent to the victim’s machine since the IP address is spoofed by the attacker. This causes significant traffic to the actual victim’s machine, ultimately leading the machine to crash.
+- Change-point detection technique 
+  - filters network traffic by IP addresses, targeted port numbers, and communication protocols used, and stores the traffic flow data in a graph that shows the traffic flow rate versus time.
   
 
 
