@@ -157,6 +157,99 @@
 - ARP method
   - Only a machine in promiscuous mode (machine C) caches the ARP information (IP and MAC address mapping)
   - A machine in promiscuous mode responds to the ping message as it has correct information about the host sending the ping request in its cache; rest of the machines will send ARP probe to identify the source of ping request
+  
+  # Notes
+
+### sniffing on switched network
+
+- ARP spoofing 
+  - is a technique by which an attacker sends (spoofed) ARP messages onto a local area network. In general, the aim is to associate the attacker’s MAC address with the IP address of another host, such as the default gateway, causing any traffic meant for that IP address to be sent to the attacker instead.
+
+- MAC duplication 
+  - executed by an attacker by changing the MAC address of their host to match the MAC address of the target host on the network, making the switch forward the target packets to both the host on the network.
+
+- MAC flooding 
+  - is a technique employed to compromise the security of the network switches. Switches maintain a list (called a content addressable memory (CAM) table) that maps individual MAC addresses on the network to the physical ports on the switch. 
+
+### attacks
+
+- IRDP Spoofing: 
+  - The IRDP Router Discovery Protocol (IRDP) is a routing protocol that allows a host to discover the IP addresses of active routers on its subnet by listening to router advertisement and solicitation messages on its network. An attacker can use this to send spoofed router advertisement messages so that all the data packets travel through the attacker's system. Thus, the attacker can sniff the traffic and collect valuable information from the data packets. Attackers can use IRDP spoofing to launch MITM, DoS, and passive sniffing attacks.
+
+    - Passive Sniffing: 
+      - In a switched network, the attacker spoofs IRDP traffic to re-route the outbound traffic of target hosts through the attacker’s machine
+      - MITM: Once sniffing starts, the attacker acts as a proxy between the victim and destination. The attacker plays an MITM role and tries to modify the traffic.
+      - DoS: IDRP spoofing allows remote attackers to add wrong route entries into victims routing table. The wrong address entry causes DoS.
+- DHCP Starvation Attack: 
+  - In a DHCP starvation attack, an attacker floods the DHCP server by sending a large number of DHCP requests and uses all of the available IP addresses that the DHCP server can issue. As a result, the server cannot issue any more IP addresses, leading to Denial-of-Service (DoS) attacks.
+
+- MAC Flooding:
+  -  MAC flooding is a technique used to compromise the security of network switches that connect network segments or network devices. Attackers use the MAC flooding technique to force a switch to act as a hub, so that they can easily sniff the traffic.
+
+- ARP Spoofing: 
+  - ARP Spoofing involves constructing a large number of forged ARP request and reply packets to overload a switch. Attackers use this flaw in ARP to create malformed ARP replies containing spoofed IP and MAC addresses. Assuming it to be the legitimate ARP reply, the victim's computer blindly accepts the ARP entry into its ARP table. Once the ARP table is flooded with spoofed ARP replies, the attacker sets the switch in forwarding mode, which intercepts all the data that flows from the victim machine without the victim being aware of the attack. 
+
+### DNS poisoning techniques
+
+- Intranet DNS spoofing: 
+  - An attacker can perform an intranet DNS spoofing attack on a switched LAN with the help of the ARP poisoning technique. To perform this attack, the attacker must be connected to the LAN and be able to sniff the traffic or packets. An attacker who succeeds in sniffing the ID of the DNS request from the intranet can send a malicious reply to the sender before the actual DNS server.
+
+- Internet DNS spoofing: 
+  - Attackers perform Internet DNS spoofing with the help of Trojans when the victim’s system connects to the Internet. It is an MITM attack in which the attacker changes the primary DNS entries of the victim’s computer.
+
+- Proxy server DNS poisoning: 
+  - In the proxy server DNS poisoning technique, the attacker sets up a proxy server on the attacker’s system. The attacker also configures a fraudulent DNS and makes its IP address a primary DNS entry in the proxy server.
+
+- DNS cache poisoning:
+  -  Attackers target this DNS cache and make changes or add entries to the DNS cache. If the DNS resolver cannot validate that the DNS responses have come from an authoritative source, it will cache the incorrect entries locally and serve them to users who make the same request.
+
+### tools
+
+- NetStumbler:
+  -  It is a tool used for collecting wireless packets and detecting wireless LANs using 802.11b, 802.11a and 802.11g WLAN standards. It runs on Windows environment.
+
+- John The Ripper: 
+  - John the Ripper is a fast password cracker, currently available for many flavors of Unix, Windows, DOS, and OpenVMS. Its primary purpose is to detect weak Unix passwords. Besides several crypt(3) password hash types most commonly found on various Unix systems, supported out of the box are Windows LM hashes, plus lots of other hashes and ciphers in the community-enhanced version.
+
+- Netcat: 
+  - Netcat is a networking utility that reads and writes data across network connections, using the TCP/IP protocol. It is a reliable “back-end” tool used directly or driven by other programs and scripts. It is also a network debugging and exploration tool.
+
+- Ettercap:
+  -  Ettercap is a comprehensive suite for man in the middle attacks. It features sniffing of live connections, content filtering on the fly and many other interesting tricks. It supports active and passive dissection of many protocols and includes many features for network and host analysis.
+
+- L0phtCrack:
+  -  L0phtCrack is a tool designed to audit password and recover applications. It recovers lost Microsoft Windows passwords with the help of dictionary, hybrid, rainbow table, and brute-force attacks, and it also checks the strength of the password. LOphtCrack helps to disclose the security defects that are inherent in windows password authentication system.
+
+- Medusa: 
+  - Medusa is intended to be a speedy, massively parallel, modular, login brute-forcer. The goal is to support as many services which allow remote authentication as possible.
+- Nmap: 
+  - There are many tools, such as the Nmap that are available to use for the detection of promiscuous mode. Nmap’s NSE script allows you to check if a target on a local Ethernet has its network card in promiscuous mode. There is an NSE script for nmap called sniffer-detect.nse which does just that. NAST: - it detects other PC's in promiscuous mode by doing the ARP test.
+
+- FaceNiff: 
+  - FaceNiff is an Android app that can sniff and intercept web session profiles over the WiFi connected to the mobile. This app works on rooted android devices. The Wi-Fi connection should be over Open, WEP, WPA-PSK, or WPA2-PSK networks while sniffing the sessions.
+
+- OmniPeek: 
+  - OmniPeek network analyzer provides real-time visibility and expert analysis of each part of the target network. This tool will analyze, drill down, and fix performance bottlenecks across multiple network segments. Attackers can use this tool to analyze a network and inspect the packets in the network.
+
+- shARP: 
+  - An anti-ARP-spoofing application software that use active and passive scanning methods to detect and remove any ARP-spoofer from the network.
+
+###  countermeasures
+
+- IP Source Guard: 
+  - IP Source Guard is a security feature in switches that restricts the IP traffic on untrusted Layer 2 ports by filtering traffic based on the DHCP snooping binding database. It prevents spoofing attacks when the attacker tries to spoof or use the IP address of another host.
+- DHCP Snooping Binding Table: 
+  - The DHCP snooping process filters untrusted DHCP messages and helps to build and bind a DHCP binding table. This table contains the MAC address, IP address, lease time, binding type, VLAN number, and interface information to correspond with untrusted interfaces of a switch. It acts as a firewall between untrusted hosts and DHCP servers. It also helps in differentiating between trusted and untrusted interfaces.
+- Dynamic ARP Inspection: 
+  - The system checks the IP to MAC address binding for each ARP packet in a network. While performing a Dynamic ARP inspection, the system will automatically drop invalid IP to MAC address bindings.
+- AAA (Authentication, Authorization and Accounting): 
+  - Use of AAA (Authentication, Authorization and Accounting) server mechanism in order to filter MAC addresses subsequently.
+### Random stuff
+
+- MAC flooding, spoofing attack, and switch port stealing are active sniffing techniques, whereas domain snipping is a type of domain name system (DNS) attack.
+- implementation of DAI prevents poisoning attacks. DAI is a security feature that validates ARP packets in a network. When DAI activates on a VLAN, all ports on the VLAN are considered to be untrusted by default. DAI validates the ARP packets using a DHCP snooping binding table. The DHCP snooping binding table consists of MAC addresses, IP addresses, and VLAN interfaces acquired by listening to DHCP message exchanges. Hence, you must enable DHCP snooping before enabling DAI. Otherwise, establishing a connection between VLAN devices based on ARP is not possible. Consequently, a self-imposed DoS attack might result on any device in that VLAN.
+- PNac
+  - It is a type of network protocol for PNAC, and its main purpose is to enforce access control at the point where a user joins the network. It is part of the IEEE 802.1 group of networking protocols. It provides an authentication mechanism to devices wishing to attach to a LAN or WLAN.
 
 
 
